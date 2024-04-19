@@ -18,4 +18,6 @@ msgstr ""
 #. module: simple_website_sale_clear_cart
 #: model_terms:ir.ui.view,arch_db:simple_website_sale_clear_cart.simple_website_sale_clear_cart
 msgid "<i class=\"fa fa-trash\"/> <span class=\"d-inline\">Clear Cart</span>"
-msgstr "<i class=\"fa fa-trash\"/> <span class=\"d-inline\">Clear Cart</span>"
+msgstr ""
+"<i class=\"fa fa-trash\"/> <span class=\"d-inline\">Carrello "
+"trasparente</span>"

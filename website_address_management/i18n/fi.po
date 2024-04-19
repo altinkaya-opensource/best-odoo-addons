@@ -115,4 +115,4 @@ msgstr ""
 #. module: website_address_management
 #: model_terms:ir.ui.view,arch_db:website_address_management.my_addresses
 msgid "my_addresses"
-msgstr ""
+msgstr "my_addresses"
