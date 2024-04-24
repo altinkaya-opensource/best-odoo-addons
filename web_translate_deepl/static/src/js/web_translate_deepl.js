@@ -110,6 +110,13 @@ odoo.define('web_translate_deepl.web_translate_dialog_deepl', function (require)
                     $currentInput.val(result);
                     $currentInput.toggleClass('touched', true);
                     $currentInput.css('color', 'green');
+                    // Re-render the html field to see the changes
+                    if ($currentInput.context.dataset['fieldType'] == 'html') {
+                        let parent = $currentInput.parent();
+                        parent.find('.btn[data-name="codeview"]').click();
+                        parent.find('.note-codable').val(result);
+                        parent.find('.btn[data-name="codeview"]').click();
+                    }
                 }
                 // Emit custom event to indicate translation completion
                 $(document).trigger('translationCompleted');
