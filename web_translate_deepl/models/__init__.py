@@ -4,3 +4,4 @@ from . import deepl_account
 from . import deepl_glossary
 from . import res_company
 from . import res_lang
+from . import base

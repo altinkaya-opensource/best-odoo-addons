@@ -181,7 +181,7 @@ msgstr ""
 #. module: web_translate_deepl
 #: model:ir.model,name:web_translate_deepl.model_res_lang
 msgid "Languages"
-msgstr ""
+msgstr "Языки"
 
 #. module: web_translate_deepl
 #: model:ir.model.fields,field_description:web_translate_deepl.field_deepl_account____last_update
