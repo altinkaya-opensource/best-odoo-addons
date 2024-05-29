@@ -31,6 +31,9 @@
                     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                     })(window,document,'script','dataLayer','<t t-esc="website.google_tag_manager_key"/>');
                 </script>
+                <script>
+                    dataLayer.push({'user_id': '<t t-esc="request.env.user.id"/>'});
+                </script>
                 <!-- End Google Tag Manager -->
             </t>
         </xpath>
