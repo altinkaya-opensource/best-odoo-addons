@@ -101,7 +101,7 @@ class DeepLAccount(models.Model):
             raise UserError(_("DeepL API Error: %s") % response.text)
         return response.json().get("translations")[0].get("text")
 
-    def rpc_translate(self, company_id, target_lang, text, field_type):
+    def rpc_translate(self, target_lang, text, field_type):
         """
         Translate the given text to the target language.
         :param company_id: current company id
@@ -110,9 +110,9 @@ class DeepLAccount(models.Model):
         :param field_type: field type to translate
         :return:
         """
-        company_sudo = self.env["res.company"].sudo().browse(company_id)
+        company_sudo = self.env.user.company_id.sudo()
         if company_sudo and company_sudo.deepl_account_id:
-            target_lang_id = self.env["res.lang"].browse(target_lang)
+            target_lang_id = self.env["res.lang"].search([("code", "=", target_lang)])
             base_lang_id = target_lang_id.tr_base_lang_id
             if not base_lang_id:
                 raise UserError(

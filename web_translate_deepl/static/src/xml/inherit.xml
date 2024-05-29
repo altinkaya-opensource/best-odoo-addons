@@ -3,25 +3,26 @@
     <t t-inherit="web.TranslationDialog" t-inherit-mode="extension" owl="1">
 
         <!-- Translate all buttons -->
-<!--        <xpath expr="//div[hasclass('o_translation_dialog')]" position="before">-->
-<!--            <button t-if="widget.deepl_enabled" class="btn oe_button btn-primary oe_translate_all_btn mb-3">-->
-<!--                <span>Translate All</span>-->
-<!--            </button>-->
-<!--        </xpath>-->
-<!--        &lt;!&ndash; Adds translate button on single field. &ndash;&gt;-->
-<!--        <t t-jquery=".oe_form_frame_cell" t-operation="append">-->
-<!--            <td t-if="widget.deepl_enabled and widget.user_lang != lg.code and lg.tr_base_lang_id">-->
-<!--                <button class="btn oe_button btn-primary oe_translate_btn mb-1" t-attf-data-lang="#{lg.code}" t-att-data-field-type="field.type">-->
-<!--                    <span>Translate</span>-->
-<!--                </button>-->
-<!--            </td>-->
-<!--        </t>-->
+        <xpath expr="//div[hasclass('o_translation_dialog')]" position="before">
+            <button t-if="props.deepl_enabled" class="btn oe_button btn-primary oe_translate_all_btn mb-3"
+                    t-on-click="onClickTranslateAll">
+                <span><i class="fa fa-globe"/> Translate All</span>
+            </button>
+        </xpath>
+        <!-- Adds translate button on single field. -->
 
-<!--        <t t-jquery=".oe_translation_field" t-operation="attributes">-->
-<!--            <attribute name="t-attf-data-lang">#{lg.id}</attribute>-->
-<!--            <attribute name="t-attf-data-base-tr-lang">#{lg.tr_base_lang_id[0] or ''}</attribute>-->
-<!--        </t>-->
+        <xpath expr="//div[hasclass('translation')]" position="inside">
+                <button t-if="props.deepl_enabled"
+                        t-att-title="term.base_lang + ' -> ' + term.lang"
+                        class="btn oe_button btn-primary oe_translate_btn my-2"
+                        t-att-data-field-type="props.isText ? 'textarea' : 'input'"
+                        t-att-data-lang="term.lang"
+                        t-att-data-base-lang="term.base_lang"
+                        t-att-data-is-user-lang="term.lang === props.user_lang ? 'true' : 'false'"
+                        t-on-click="onClickTranslate">
+                    <span><i class="fa fa-globe"/></span>
+                </button>
+        </xpath>
 
     </t>
-
 </templates>
