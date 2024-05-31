@@ -47,6 +47,39 @@ odoo.define('web_translate_deepl.web_translate_dialog_deepl', function (require)
             this.$el.find('.oe_translate_btn').click(this._onSingleBtnTranslateDeepl.bind(this));
             // Multi translate button
             this.$el.find('.oe_translate_all_btn').click(this._multiBtnTranslate.bind(this));
+            this.$el.find('.oe_copy_values_btn').click(this._copyValues.bind(this));
+        },
+
+        _updateSingleField: function ($field, value) {
+            $field.val(value);
+            $field.toggleClass('touched', true);
+            $field.css('color', 'green');
+            // Re-render the html field to see the changes
+            if ($field.context.dataset['fieldType'] === 'html') {
+                let parent = $field.parent();
+                parent.find('.btn[data-name="codeview"]').click();
+                parent.find('.note-codable').val(value);
+                parent.find('.btn[data-name="codeview"]').click();
+            }
+            return true;
+        },
+
+        _copyValues: function (ev) {
+            // Copy Value from the main (user language) to the other languages
+            var $copy_btn = $(ev.currentTarget);
+            var $translate_btns = this.$el.find('.oe_translate_btn');
+            var $table = $('.oe_translation_form');
+            var inputType = "input";
+            if ($table.find('textarea').length > 0) {
+                inputType = "textarea";
+            }
+            let sourceText = $(inputType + "[name*=\"tr_TR\"]");
+            let self = this;
+            $translate_btns.each(function () {
+                let $currentInput = $(this).closest('tr').find(inputType);
+                self._updateSingleField($currentInput, sourceText.val());
+            });
+
         },
 
         _multiBtnTranslate: function (ev) {
@@ -99,6 +132,7 @@ odoo.define('web_translate_deepl.web_translate_dialog_deepl', function (require)
                 console.error('Base translation language not found');
                 return;
             }
+            let self = this;
             let $source_input = $currentInput.closest('table').find(inputType + '[data-lang="' + source_lang + '"]');
 
             rpc.query({
@@ -107,16 +141,7 @@ odoo.define('web_translate_deepl.web_translate_dialog_deepl', function (require)
                 args: [false, this.company_id, target_lang, $source_input.val(), fieldType],
             }).then(function (result) {
                 if (result) {
-                    $currentInput.val(result);
-                    $currentInput.toggleClass('touched', true);
-                    $currentInput.css('color', 'green');
-                    // Re-render the html field to see the changes
-                    if ($currentInput.context.dataset['fieldType'] == 'html') {
-                        let parent = $currentInput.parent();
-                        parent.find('.btn[data-name="codeview"]').click();
-                        parent.find('.note-codable').val(result);
-                        parent.find('.btn[data-name="codeview"]').click();
-                    }
+                    self._updateSingleField($currentInput, result);
                 }
                 // Emit custom event to indicate translation completion
                 $(document).trigger('translationCompleted');

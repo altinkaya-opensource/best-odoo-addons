@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-05 10:57+0000\n"
-"PO-Revision-Date: 2024-02-05 10:57+0000\n"
+"POT-Creation-Date: 2024-05-31 12:08+0000\n"
+"PO-Revision-Date: 2024-05-31 12:08+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,14 +28,14 @@ msgstr ""
 
 #. module: web_translate_deepl
 #. openerp-web
-#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:23
+#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:26
 #, python-format
 msgid "#{lg.id}"
 msgstr ""
 
 #. module: web_translate_deepl
 #. openerp-web
-#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:24
+#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:27
 #, python-format
 msgid "#{lg.tr_base_lang_id[0] or ''}"
 msgstr ""
@@ -66,7 +66,7 @@ msgid "Base Translate Language"
 msgstr "Çeviri Kaynak Dili"
 
 #. module: web_translate_deepl
-#: code:addons/web_translate_deepl/models/deepl_account.py:112
+#: code:addons/web_translate_deepl/models/deepl_account.py:119
 #, python-format
 msgid "Base language not found! Set translation base language for %s"
 msgstr "Kaynak dil bulunamadı! %s için çeviri kaynak dilini ayarlayın"
@@ -75,6 +75,13 @@ msgstr "Kaynak dil bulunamadı! %s için çeviri kaynak dilini ayarlayın"
 #: model:ir.model,name:web_translate_deepl.model_res_company
 msgid "Companies"
 msgstr "Şirketler"
+
+#. module: web_translate_deepl
+#. openerp-web
+#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:12
+#, python-format
+msgid "Copy Values"
+msgstr "Değerleri Kopyala"
 
 #. module: web_translate_deepl
 #: model:ir.model.fields,field_description:web_translate_deepl.field_deepl_account__create_uid
@@ -91,14 +98,14 @@ msgid "Created on"
 msgstr "Oluşturulma"
 
 #. module: web_translate_deepl
-#: code:addons/web_translate_deepl/models/deepl_account.py:95
-#: code:addons/web_translate_deepl/models/deepl_glossary.py:103
+#: code:addons/web_translate_deepl/models/deepl_account.py:101
+#: code:addons/web_translate_deepl/models/deepl_glossary.py:104
 #, python-format
 msgid "DeepL API Error: %s"
 msgstr "DeepL API Hatası: %s"
 
 #. module: web_translate_deepl
-#: code:addons/web_translate_deepl/models/deepl_account.py:148
+#: code:addons/web_translate_deepl/models/deepl_account.py:156
 #, python-format
 msgid "DeepL API Success: \"Hello World\" translation: %s"
 msgstr "DeepL API Başarılı: \"Hello World\" çevirisi: %s"
@@ -140,7 +147,7 @@ msgid "DeepL ID"
 msgstr ""
 
 #. module: web_translate_deepl
-#: code:addons/web_translate_deepl/models/deepl_account.py:122
+#: code:addons/web_translate_deepl/models/deepl_account.py:130
 #, python-format
 msgid "DeepL account not found for this company!"
 msgstr "Bu şirket için DeepL hesabı bulunamadı!"
@@ -275,7 +282,7 @@ msgstr "DeepL API ile çevrilecek dil"
 
 #. module: web_translate_deepl
 #. openerp-web
-#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:17
+#: code:addons/web_translate_deepl/static/src/xml/inherit.xml:20
 #, python-format
 msgid "Translate"
 msgstr "Çevir"

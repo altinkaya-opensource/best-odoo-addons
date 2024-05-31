@@ -8,6 +8,9 @@
             <button t-if="widget.deepl_enabled" class="btn oe_button btn-primary oe_translate_all_btn mb-3">
                 <span>Translate All</span>
             </button>
+            <button t-if="widget.deepl_enabled" class="btn oe_button btn-primary oe_copy_values_btn mb-3" t-att-data-base-lang="widget.user_lang">
+                <span>Copy Values</span>
+            </button>
         </t>
 
         <!-- Adds translate button on single field. -->
