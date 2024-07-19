@@ -17,4 +17,9 @@
     "data": [],
     "post_load": "post_load",
     "installable": True,
+    # Odoo Apps Store Specific #
+    "images": ["static/description/banner.png"],
+    "price": 10.00,
+    "currency": "EUR",
+    "category": "Website",
 }
