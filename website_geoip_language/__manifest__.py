@@ -1,4 +1,4 @@
-# Copyright 2023 Yiğit Budak (https://github.com/yibudak)
+# Copyright 2024 Ahmet Yiğit Budak (https://github.com/yibudak)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 {
     "name": "Website GeoIP Language",
@@ -17,9 +17,4 @@
     "data": [],
     "post_load": "post_load",
     "installable": True,
-    # Odoo Apps Store Specific #
-    "images": ["static/description/banner.png"],
-    "price": 10.00,
-    "currency": "EUR",
-    "category": "Tools",
 }
