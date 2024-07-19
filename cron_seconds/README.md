@@ -21,7 +21,7 @@ This module adds the ability to run Scheduled Actions in seconds.
 
 ## Authors:
 
-- [Yiğit Budak](https://github.com/yibudak)
+- [Ahmet Yiğit Budak](https://github.com/yibudak)
 
 ## Contribution:
 

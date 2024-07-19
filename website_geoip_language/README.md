@@ -3,23 +3,22 @@
 
 You can purchase this module from Odoo Apps Store to support our work and maintenance.
 
-[![Odoo Apps Store](https://img.shields.io/badge/Odoo%20Apps%20Store-714b67?style=for-the-badge)](https://apps.odoo.com/apps/modules/16.0/website_address_management/)
+[![Odoo Apps Store](https://img.shields.io/badge/Odoo%20Apps%20Store-714b67?style=for-the-badge)](https://apps.odoo.com/apps/modules/16.0/website_geoip_language/)
 
-# Website Address Management
+# Website GeoIP Language Redirect
 
-This module helps customers to manage their addresses on the website.
-Customers can add, edit and delete their addresses without any sales order.
-Unlike other modules in the marketplace, this module also works with address fields that you added custom.
+This module automatically sets the language of the visitor based on their IP address.
 
 ## Installation:
 
 1. Clone this repository.
 2. Add this directory to your addons path (e.g. `--addons-path=addons,path/to/this/repo`).
-3. Install the module `website_address_management`.
+3. Install the module `website_geoip_language`.
+4. This module requires the GeoIP database path to be present in the configuration and valid reverse proxy settings. No configuration required in Odoo.
 
 ## Authors:
 
-- [Yiğit Budak](https://github.com/yibudak)
+- [Ahmet Yiğit Budak](https://github.com/yibudak)
 
 ## Contribution:
 

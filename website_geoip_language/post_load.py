@@ -1,8 +1,9 @@
-import logging
-
+# Copyright 2024 Ahmet Yiğit Budak (https://github.com/yibudak)
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 from odoo import http
 from odoo.tools.func import lazy_property
 import babel.core
+import logging
 
 _logger = logging.getLogger(__name__)
 
