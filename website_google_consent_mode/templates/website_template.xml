@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="web_layout" inherit_id="website.layout" priority="202">
+        <xpath expr="//script[@data-script-name='datalayer_init']" position="after">
+            <t t-set="cookie_allow_type" t-value="website.get_cookie_allow_type()"/>
+            <t t-if="website and website.google_tag_manager_key">
+                <script>
+                    gtag('consent', 'default', {
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'analytics_storage': 'denied',
+                    'functionality_storage': 'denied',
+                    'personalization_storage': 'denied',
+                    'security_storage': 'denied',
+                    'wait_for_update': 500
+                    });
+                </script>
+
+                <script t-if="cookie_allow_type">
+                    gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'analytics_storage': 'granted',
+                    'functionality_storage': 'granted',
+                    'personalization_storage': 'granted',
+                    'security_storage': 'granted'
+                    <t t-if="cookie_allow_type == 'all'">,'ad_user_data': 'granted','ad_personalization': 'granted'</t>
+                    });
+                </script>
+
+
+            </t>
+        </xpath>
+    </template>
+</odoo>

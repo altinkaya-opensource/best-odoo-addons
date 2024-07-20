@@ -20,8 +20,9 @@
         <xpath expr="//meta[@name='generator']" position="before">
             <t t-if="website and website.google_tag_manager_key">
                 <!-- Google Tag Manager -->
-                <script>
-                  dataLayer = [{}];
+                <script data-script-name="datalayer_init">
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
                 </script>
                 <script
                     type="text/javascript"
