@@ -23,7 +23,7 @@ def post_load():
     def _best_lang_from_geolocation(self):
         ip_lang = None
         best_lang = _best_lang_orig.__get__(self, cls=http.Request)
-        geolocation_resolve = http.Request._geolocation_resolve(self)
+        geolocation_resolve = http.Request._geoip_resolve(self)
         if geolocation_resolve and geolocation_resolve.get("country_code"):
             country_code = geolocation_resolve["country_code"]
             try:
