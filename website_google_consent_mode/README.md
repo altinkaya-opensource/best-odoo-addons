@@ -2,6 +2,8 @@
 ![Odoo Version](https://img.shields.io/badge/maturity-production/stable-green)  ![Odoo Version](https://img.shields.io/badge/odoo_version-16.0-blue)  ![Licence](https://img.shields.io/badge/licence-LGPL--3-lightgrey)
 # Website Google Consent Mode
 
+WARNING: This functionality is already exist in Odoo 16.0 since September 2024
+
 This module facilitates the integration of Odoo with Google Tag Manager's consent mode. When a user consents to required cookies, the module transmits this consent information to Google Tag Manager. Additionally, if the user consents to optional cookies, the module will also send this extended consent information (such as for personalized ads) to Google Tag Manager.
 ## Installation:
 
