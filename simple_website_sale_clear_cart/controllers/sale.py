@@ -13,6 +13,10 @@ class WebsiteSaleClearCart(http.Controller):
     )
     def clear_cart(self):
         order = http.request.website.sale_get_order()
-        for line in order.order_line:
-            line.unlink()
+        order.unlink()
+        # It's better to unlink the order because when you remove all lines,
+        # the order remains in the database with a state of 'draft' without any lines.
+        # So basically, clear cart == delete the draft order.
+        # for line in order.order_line:
+        #     line.unlink()
         return http.request.redirect("/shop/cart")
